@@ -1,26 +1,16 @@
 # %%
-# importing libray to handle status bars
 from tqdm.notebook import tqdm
-
-# import libray to ignore warnings
 import warnings
 warnings.filterwarnings("ignore")
-
-# importing library to deal with numeric arrays
 import numpy as np
-
-# importing deep learning library
 import tensorflow as tf
-
-#importing library to read files
 import pickle
 
 # %%
 def img_feature_extraction(x_values, pre_model):
 
     data = []
-    
-    # preprocessing and then using pretrained neural nets to extract features to be fed into Global Pooling
+
     for image in tqdm(x_values):
         im_toarray = tf.keras.preprocessing.image.img_to_array(image)
         
