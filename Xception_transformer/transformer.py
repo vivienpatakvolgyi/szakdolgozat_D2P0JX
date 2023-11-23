@@ -1,12 +1,7 @@
 # %%
-# importing libray to handle status bars
 from tqdm.notebook import tqdm
-
-# import libray to ignore warnings
 import warnings
 warnings.filterwarnings("ignore")
-
-# importing deep learning library
 import tensorflow as tf
 
 
@@ -34,7 +29,6 @@ def add(group, amount):
 
 
 # %%
-#train_X =list(add('train', 17))
 test_X = list(add('test', 2))
 val_X = list(add('val', 2))
 
@@ -74,7 +68,6 @@ class PositionalEmbedding(layers.Layer):
         self.output_dim = output_dim
 
     def call(self, inputs):
-        # The inputs are of shape: `(batch_size, frames, num_features)`
         length = tf.shape(inputs)[1]
         positions = tf.range(start=0, limit=length, delta=1)
         embedded_positions = self.position_embeddings(positions)
@@ -192,9 +185,6 @@ def run_experiment():
 
 # %%
 trained_model = run_experiment()
-
-# %% [markdown]
-# Kiértékelés
 
 # %%
 ready_model = get_compiled_model()
