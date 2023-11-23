@@ -1,12 +1,7 @@
 # %%
-# importing libray to handle status bars
 from tqdm.notebook import tqdm
-
-# import libray to ignore warnings
 import warnings
 warnings.filterwarnings("ignore")
-
-# importing deep learning library
 import tensorflow as tf
 
 
@@ -34,7 +29,6 @@ def add(group, amount):
 
 
 # %%
-#train_X =list(add('train', 17))
 test_X = list(add('test', 2))
 val_X = list(add('val', 2))
 
@@ -192,9 +186,6 @@ def run_experiment():
 
 # %%
 trained_model = run_experiment()
-
-# %% [markdown]
-# Kiértékelés
 
 # %%
 ready_model = get_compiled_model()
